@@ -1,0 +1,516 @@
+{
+    "resourceType": "Conformance",
+    "publisher": "1upHealth",
+    "contact": [
+        {
+            "telecom": [
+                {
+                    "system": "email",
+                    "value": "support@1up.health"
+                },
+                {
+                    "system": "other",
+                    "value": "http: //1up.health"
+                }
+            ]
+        }
+    ],
+    "status": "active",
+    "date": "2020-06-09T03:00:53+00:00",
+    "kind": "instance",
+    "software": {
+        "name": "1up FHIR Server",
+        "version": "1.0.2"
+    },
+    "implementation": {
+        "description": "1up FHIR Server DSTU2",
+        "url": "http://localhost:8080/1up-fhir-jpaserver/fhir/"
+    },
+    "fhirVersion": "1.0.2",
+    "acceptUnknown": "extensions",
+    "format": [
+        "application/xml+fhir",
+        "application/json+fhir"
+    ],
+    "rest": [
+        {
+            "mode": "server",
+            "resource": [
+                {
+                    "type": "Account",
+                    "profile": {
+                        "reference": "http://hl7.org/fhir/profiles/Account"
+                    },
+                    "interaction": [
+                        {
+                            "code": "read"
+                        },
+                        {
+                            "code": "vread"
+                        },
+                        {
+                            "code": "update"
+                        },
+                        {
+                            "code": "delete"
+                        },
+                        {
+                            "code": "history-instance"
+                        },
+                        {
+                            "code": "history-type"
+                        },
+                        {
+                            "code": "create"
+                        },
+                        {
+                            "code": "search-type"
+                        }
+                    ],
+                    "conditionalCreate": true,
+                    "conditionalUpdate": true,
+                    "conditionalDelete": "multiple",
+                    "searchInclude": [
+                        "*",
+                        "Account:owner",
+                        "Account:patient",
+                        "Account:subject"
+                    ],
+                    "searchParam": [
+                        {
+                            "name": "_content",
+                            "type": "string",
+                            "documentation": "Search the contents of the resource's data using a fulltext search"
+                        },
+                        {
+                            "name": "_filter",
+                            "type": "string",
+                            "documentation": "Search the contents of the resource's data using a filter"
+                        },
+                        {
+                            "name": "_has",
+                            "type": "string",
+                            "documentation": "Return resources linked to by the given target"
+                        },
+                        {
+                            "name": "_id",
+                            "type": "string",
+                            "documentation": "The ID of the resource"
+                        },
+                        {
+                            "name": "_language",
+                            "type": "string",
+                            "documentation": "The language of the resource"
+                        },
+                        {
+                            "name": "_lastUpdated",
+                            "type": "date",
+                            "documentation": "Only return resources which were last updated as specified by the given range"
+                        },
+                        {
+                            "name": "_profile",
+                            "type": "uri",
+                            "documentation": "Search for resources which have the given profile"
+                        },
+                        {
+                            "name": "_security",
+                            "type": "token",
+                            "documentation": "Search for resources which have the given security labels"
+                        },
+                        {
+                            "name": "_source",
+                            "type": "uri",
+                            "documentation": "Search for resources which have the given source value (Resource.meta.source)"
+                        },
+                        {
+                            "name": "_tag",
+                            "type": "token",
+                            "documentation": "Search for resources which have the given tag"
+                        },
+                        {
+                            "name": "_text",
+                            "type": "string",
+                            "documentation": "Search the contents of the resource's narrative using a fulltext search"
+                        },
+                        {
+                            "name": "balance",
+                            "type": "quantity"
+                        },
+                        {
+                            "name": "identifier",
+                            "type": "token"
+                        },
+                        {
+                            "name": "name",
+                            "type": "string"
+                        },
+                        {
+                            "name": "owner",
+                            "type": "reference",
+                            "chain": [
+                                "*"
+                            ]
+                        },
+                        {
+                            "name": "patient",
+                            "type": "reference",
+                            "chain": [
+                                "*"
+                            ]
+                        },
+                        {
+                            "name": "period",
+                            "type": "date"
+                        },
+                        {
+                            "name": "status",
+                            "type": "token"
+                        },
+                        {
+                            "name": "subject",
+                            "type": "reference",
+                            "chain": [
+                                "*"
+                            ]
+                        },
+                        {
+                            "name": "type",
+                            "type": "token"
+                        }
+                    ]
+                },
+                {
+                    "type": "AllergyIntolerance",
+                    "profile": {
+                        "reference": "http://hl7.org/fhir/profiles/AllergyIntolerance"
+                    },
+                    "interaction": [
+                        {
+                            "code": "read"
+                        },
+                        {
+                            "code": "vread"
+                        },
+                        {
+                            "code": "update"
+                        },
+                        {
+                            "code": "delete"
+                        },
+                        {
+                            "code": "history-instance"
+                        },
+                        {
+                            "code": "history-type"
+                        },
+                        {
+                            "code": "create"
+                        },
+                        {
+                            "code": "search-type"
+                        }
+                    ],
+                    "conditionalCreate": true,
+                    "conditionalUpdate": true,
+                    "conditionalDelete": "multiple",
+                    "searchInclude": [
+                        "*",
+                        "AllergyIntolerance:patient",
+                        "AllergyIntolerance:recorder",
+                        "AllergyIntolerance:reporter"
+                    ],
+                    "searchParam": [
+                        {
+                            "name": "_content",
+                            "type": "string",
+                            "documentation": "Search the contents of the resource's data using a fulltext search"
+                        },
+                        {
+                            "name": "_filter",
+                            "type": "string",
+                            "documentation": "Search the contents of the resource's data using a filter"
+                        },
+                        {
+                            "name": "_has",
+                            "type": "string",
+                            "documentation": "Return resources linked to by the given target"
+                        },
+                        {
+                            "name": "_id",
+                            "type": "string",
+                            "documentation": "The ID of the resource"
+                        },
+                        {
+                            "name": "_language",
+                            "type": "string",
+                            "documentation": "The language of the resource"
+                        },
+                        {
+                            "name": "_lastUpdated",
+                            "type": "date",
+                            "documentation": "Only return resources which were last updated as specified by the given range"
+                        },
+                        {
+                            "name": "_profile",
+                            "type": "uri",
+                            "documentation": "Search for resources which have the given profile"
+                        },
+                        {
+                            "name": "_security",
+                            "type": "token",
+                            "documentation": "Search for resources which have the given security labels"
+                        },
+                        {
+                            "name": "_source",
+                            "type": "uri",
+                            "documentation": "Search for resources which have the given source value (Resource.meta.source)"
+                        },
+                        {
+                            "name": "_tag",
+                            "type": "token",
+                            "documentation": "Search for resources which have the given tag"
+                        },
+                        {
+                            "name": "_text",
+                            "type": "string",
+                            "documentation": "Search the contents of the resource's narrative using a fulltext search"
+                        },
+                        {
+                            "name": "category",
+                            "type": "token"
+                        },
+                        {
+                            "name": "criticality",
+                            "type": "token"
+                        },
+                        {
+                            "name": "date",
+                            "type": "date"
+                        },
+                        {
+                            "name": "identifier",
+                            "type": "token"
+                        },
+                        {
+                            "name": "last-date",
+                            "type": "date"
+                        },
+                        {
+                            "name": "manifestation",
+                            "type": "token"
+                        },
+                        {
+                            "name": "onset",
+                            "type": "date"
+                        },
+                        {
+                            "name": "patient",
+                            "type": "reference",
+                            "chain": [
+                                "*"
+                            ]
+                        },
+                        {
+                            "name": "recorder",
+                            "type": "reference",
+                            "chain": [
+                                "*"
+                            ]
+                        },
+                        {
+                            "name": "reporter",
+                            "type": "reference",
+                            "chain": [
+                                "*"
+                            ]
+                        },
+                        {
+                            "name": "route",
+                            "type": "token"
+                        },
+                        {
+                            "name": "severity",
+                            "type": "token"
+                        },
+                        {
+                            "name": "status",
+                            "type": "token"
+                        },
+                        {
+                            "name": "substance",
+                            "type": "token"
+                        },
+                        {
+                            "name": "type",
+                            "type": "token"
+                        }
+                    ]
+                },
+                {
+                    "type": "Appointment",
+                    "profile": {
+                        "reference": "http://hl7.org/fhir/profiles/Appointment"
+                    },
+                    "interaction": [
+                        {
+                            "code": "read"
+                        },
+                        {
+                            "code": "vread"
+                        },
+                        {
+                            "code": "update"
+                        },
+                        {
+                            "code": "delete"
+                        },
+                        {
+                            "code": "history-instance"
+                        },
+                        {
+                            "code": "history-type"
+                        },
+                        {
+                            "code": "create"
+                        },
+                        {
+                            "code": "search-type"
+                        }
+                    ],
+                    "conditionalCreate": true,
+                    "conditionalUpdate": true,
+                    "conditionalDelete": "multiple",
+                    "searchInclude": [
+                        "*",
+                        "Appointment:actor",
+                        "Appointment:location",
+                        "Appointment:patient",
+                        "Appointment:practitioner"
+                    ],
+                    "searchParam": [
+                        {
+                            "name": "_content",
+                            "type": "string",
+                            "documentation": "Search the contents of the resource's data using a fulltext search"
+                        },
+                        {
+                            "name": "_filter",
+                            "type": "string",
+                            "documentation": "Search the contents of the resource's data using a filter"
+                        },
+                        {
+                            "name": "_has",
+                            "type": "string",
+                            "documentation": "Return resources linked to by the given target"
+                        },
+                        {
+                            "name": "_id",
+                            "type": "string",
+                            "documentation": "The ID of the resource"
+                        },
+                        {
+                            "name": "_language",
+                            "type": "string",
+                            "documentation": "The language of the resource"
+                        },
+                        {
+                            "name": "_lastUpdated",
+                            "type": "date",
+                            "documentation": "Only return resources which were last updated as specified by the given range"
+                        },
+                        {
+                            "name": "_profile",
+                            "type": "uri",
+                            "documentation": "Search for resources which have the given profile"
+                        },
+                        {
+                            "name": "_security",
+                            "type": "token",
+                            "documentation": "Search for resources which have the given security labels"
+                        },
+                        {
+                            "name": "_source",
+                            "type": "uri",
+                            "documentation": "Search for resources which have the given source value (Resource.meta.source)"
+                        },
+                        {
+                            "name": "_tag",
+                            "type": "token",
+                            "documentation": "Search for resources which have the given tag"
+                        },
+                        {
+                            "name": "_text",
+                            "type": "string",
+                            "documentation": "Search the contents of the resource's narrative using a fulltext search"
+                        },
+                        {
+                            "name": "actor",
+                            "type": "reference",
+                            "documentation": "Any one of the individuals participating in the appointment",
+                            "chain": [
+                                "*"
+                            ]
+                        },
+                        {
+                            "name": "date",
+                            "type": "date",
+                            "documentation": "Appointment date/time."
+                        },
+                        {
+                            "name": "identifier",
+                            "type": "token",
+                            "documentation": "An Identifier of the Appointment"
+                        },
+                        {
+                            "name": "location",
+                            "type": "reference",
+                            "documentation": "This location is listed in the participants of the appointment",
+                            "chain": [
+                                "*"
+                            ]
+                        },
+                        {
+                            "name": "part-status",
+                            "type": "token",
+                            "documentation": "The Participation status of the subject, or other participant on the appointment. Can be used to locate participants that have not responded to meeting requests."
+                        },
+                        {
+                            "name": "patient",
+                            "type": "reference",
+                            "documentation": "One of the individuals of the appointment is this patient",
+                            "chain": [
+                                "*"
+                            ]
+                        },
+                        {
+                            "name": "practitioner",
+                            "type": "reference",
+                            "documentation": "One of the individuals of the appointment is this practitioner",
+                            "chain": [
+                                "*"
+                            ]
+                        },
+                        {
+                            "name": "status",
+                            "type": "token",
+                            "documentation": "The overall status of the appointment"
+                        }
+                    ]
+                },
+                {
+                    "type": "AppointmentResponse",
+                    "profile": {
+                        "reference": "http://hl7.org/fhir/profiles/AppointmentResponse"
+                    },
+                    "interaction": [
+                        {
+                            "code": "read"
+                        },
+                        {
+                            "code": "vread"
+                        },
+                        {
+                            "code": "update"
+                        },
+                        {
+                            "code": "delet"
