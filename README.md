@@ -2,7 +2,7 @@
 This is a spring boot service that wraps hapi fhir client to make a call to the $everything resource of a fhir server.  
 
 ## Assumptions 
-This service uses a hard coded patient ID that can be updated in configuration.  It assumed the token you are sending is valid and associated with the hard coded patient.
+This service uses a hard coded patient ID that can be updated in configuration.  It assumes the token you are sending is valid and associated with the hard coded patient.
 
 ## Configuring the service
 You can update the application.properties file in the /src/main/resources directory
